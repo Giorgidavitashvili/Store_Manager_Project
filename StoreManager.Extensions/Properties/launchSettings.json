@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "StoreManager.Extensions": {
+      "commandName": "Project",
+      "nativeDebugging": false,
+      "sqlDebugging": true
+    }
+  }
+}

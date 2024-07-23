@@ -1,0 +1,11 @@
+﻿CREATE PROCEDURE sp_GetAccounts
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT *
+	FROM Accounts
+	WHERE IsActive=1;
+
+	RETURN 0;
+END;

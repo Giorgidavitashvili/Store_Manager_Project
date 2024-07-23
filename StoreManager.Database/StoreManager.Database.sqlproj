@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>StoreManager.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{f3a12835-16be-4bf8-ac04-badd39e7c67a}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>StoreManager.Database</RootNamespace>
+    <AssemblyName>StoreManager.Database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Permissions.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\RolePermissions.sql" />
+    <Build Include="dbo\Tables\Accounts.sql" />
+    <Build Include="dbo\Tables\AccountRoles.sql" />
+    <Build Include="dbo\Tables\Employees.sql" />
+    <Build Include="dbo\Tables\Suppliers.sql" />
+    <Build Include="dbo\Tables\SupplierTransactions.sql" />
+    <Build Include="dbo\Tables\Categories.sql" />
+    <Build Include="dbo\Tables\Products.sql" />
+    <Build Include="dbo\Tables\SupplierProducts.sql" />
+    <Build Include="dbo\Tables\SupplierTransactionDetails.sql" />
+    <Build Include="dbo\Tables\PriceHistories.sql" />
+    <Build Include="dbo\Tables\ProductQuantities.sql" />
+    <Build Include="dbo\Tables\Customers.sql" />
+    <Build Include="dbo\Tables\Orders.sql" />
+    <Build Include="dbo\Tables\OrderDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertSupplier.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateSupplier.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteSupplier.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeletePermission.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteRole.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertAccount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertPermission.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertRole.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateAccount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdatePermission.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateRole.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ChangePassword.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertProduct.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteProduct.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateProduct.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteProductQuantity.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertProductQuantity.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteCategory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateCategories.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertCategory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertOrder.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertPriceHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateProductQuantity.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdatePriceHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateOrderDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetCategory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetOrder.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetProduct.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetRole.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetSupplier.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetSuppliers.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetRoles.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetProducts.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetOrders.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetCustomers.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetCategories.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetEmployees.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetPermission.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetPermissions.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteAccount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAccount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetProductQuantity.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetProductsQuantity.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAccounts.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetPriceHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetPriceHistories.sql" />
+    <Build Include="dbo\Stored Procedures\sp_InsertSupplierTransaction.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateSupplierTransaction.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetSupplierTransaction.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetSupplierTransactions.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateOrders.sql" />
+    <Build Include="dbo\Stored Procedures\sp_DeleteOrder.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AccountLogin.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PublishDev.publish.xml" />
+    <None Include="PublishTest.publish.xml" />
+    <None Include="StoreManager.Database.publish.xml" />
+    <None Include="StoreManagerTest.Database.publish.publish.xml" />
+  </ItemGroup>
+</Project>

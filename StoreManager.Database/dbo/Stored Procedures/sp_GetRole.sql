@@ -1,0 +1,13 @@
+﻿CREATE PROCEDURE sp_GetRole
+	 @RoleID Int
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT *
+
+	FROM Roles
+	WHERE IsActive=1 AND RoleID=@RoleID;
+
+	RETURN 0;
+END;
